@@ -1,0 +1,19 @@
+{
+    "name": "sit753-devops-pipeline",
+    "version": "1.0.0",
+    "description": "Simple Node.js API for SIT753 Jenkins DevOps pipeline",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "test": "jest --runInBand",
+        "build": "echo \"Build step (no transpile)\"",
+        "lint": "echo \"Lint placeholder (SonarQube will handle quality)\""
+    },
+    "dependencies": {
+        "express": "^4.19.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "supertest": "^6.3.4"
+    }
+}
