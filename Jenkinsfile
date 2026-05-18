@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test -- --runInBand'
+                sh 'npx jest --runInBand'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
                     sh """
                         npm install --save-dev jest
-                        npm test -- --coverage --runInBand
+                        npx jest --coverage --runInBand
                         sonar-scanner
                     """
                 }
