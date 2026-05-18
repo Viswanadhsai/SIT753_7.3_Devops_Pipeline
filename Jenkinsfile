@@ -7,6 +7,12 @@ pipeline {
 
     stages {
 
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -23,6 +29,7 @@ pipeline {
 
         stage('Test') {
             steps {
+                sh 'npm install jest --save-dev'
                 sh 'npx jest --runInBand'
             }
         }
